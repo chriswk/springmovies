@@ -4,7 +4,7 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'groovy'
 
-    apply from : "../dependencies.gradle"
+    apply from : "$rootDir/dependencies.gradle"
 	configurations {
 		all*.exclude group: "commons-logging", module: "commons-logging"
 	}
