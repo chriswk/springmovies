@@ -1,0 +1,26 @@
+apply plugin: 'groovy'
+apply from : "dependencies.gradle"
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'groovy'
+
+    apply from : "../dependencies.gradle"
+	configurations {
+		all*.exclude group: "commons-logging", module: "commons-logging"
+	}
+	
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+        compile libraries.logging.slf4japi
+        compile libraries.logging.logback
+		testCompile libraries.junit
+	}
+	
+	task listJars << {
+		configurations.compile.each { File file -> println file.name }
+        configurations.testCompile.each { File file -> println "test $file.name"}
+	}
+}

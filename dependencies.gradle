@@ -1,0 +1,40 @@
+project.ext {
+    hibernateVersion = "4.1.2.FINAL"
+    hibernateValidatorVersion = "4.3.0.Beta1"
+    springVersion = "3.1.1.RELEASE"
+    springSecurityVersion = "3.1.0.RELEASE"
+    logbackVersion = "1.0.1"
+    slf4jVersion = "1.6.4"
+    junitVersion = "4.10"
+    scalateVersion = "1.5.3"
+    libraries = [
+            hibernate: [
+                    core: "org.hibernate:hibernate-core:$hibernateVersion",
+                    validator: "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+            ],
+            scalate: [
+                    page: "org.fusesource:scalate-page:$scalateVersion",
+                    wikitext: "org.fusesource:scalate-wikitext:$scalateVersion"
+            ],
+            spring: [
+                    aop: "org.springframework:spring-aop:$springVersion",
+                    aspects: "org.springframework:spring-aspects:$springVersion",
+                    core: "org.springframework:spring-core:$springVersion",
+                    context: "org.springframework:spring-context:$springVersion",
+                    oxm: "org.springframework:spring-oxm:$springVersion",
+                    orm: "org.springframework:spring-orm:$springVersion",
+                    security: [
+                            core: "org.springframework.security:spring-security-core:$springSecurityVersion",
+                            taglibs: "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
+                    ],
+                    web: "org.springframework:spring-web:$springVersion",
+                    webmvc: "org.springframework:spring-webmvc:$springVersion"
+            ],
+            logging: [
+                    slf4japi: "org.slf4j:slf4j-api:$slf4jVersion",
+                    logback: "ch.qos.logback:logback-classic:$logbackVersion"
+            ],
+            junit: "junit:junit:$junitVersion"
+
+    ]
+}
