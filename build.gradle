@@ -24,3 +24,7 @@ subprojects {
         configurations.testCompile.each { File file -> println "test $file.name"}
 	}
 }
+
+task wrapper(type: Wrapper, description: "Builds wrapper for $gradleVersion") {
+
+}
