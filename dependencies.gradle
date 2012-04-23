@@ -9,6 +9,7 @@ project.ext {
     scalateVersion = "1.5.3"
     groovyVersion = "1.8.6"
     spockVersion = "0.6-groovy-1.8"
+    wro4jVersion = "1.4.5"
     libraries = [
             hibernate: [
                     core: "org.hibernate:hibernate-core:$hibernateVersion",
@@ -40,6 +41,10 @@ project.ext {
             junit: "junit:junit:$junitVersion",
             spock: [
                 core: "org.spockframework:spock-core:$spockVersion"
+            ],
+            wro4j: [
+                core: "ro.isdc.wro4j:wro4j-core:$wro4jVersion",
+                extensions: "ro.isdc.wro4j:wro4j-extensions:$wro4jVersion"
             ],
             groovy: "org.codehaus.groovy:groovy-all:$groovyVersion"
 
