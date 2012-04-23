@@ -14,9 +14,11 @@ subprojects {
 	}
 	
 	dependencies {
+        groovy libraries.groovy
         compile libraries.logging.slf4japi
         compile libraries.logging.logback
 		testCompile libraries.junit
+        testCompile libraries.spock.core
 	}
 	
 	task listJars << {

@@ -7,6 +7,8 @@ project.ext {
     slf4jVersion = "1.6.4"
     junitVersion = "4.10"
     scalateVersion = "1.5.3"
+    groovyVersion = "1.8.6"
+    spockVersion = "0.6-groovy-1.8"
     libraries = [
             hibernate: [
                     core: "org.hibernate:hibernate-core:$hibernateVersion",
@@ -35,7 +37,11 @@ project.ext {
                     slf4japi: "org.slf4j:slf4j-api:$slf4jVersion",
                     logback: "ch.qos.logback:logback-classic:$logbackVersion"
             ],
-            junit: "junit:junit:$junitVersion"
+            junit: "junit:junit:$junitVersion",
+            spock: [
+                core: "org.spockframework:spock-core:$spockVersion"
+            ],
+            groovy: "org.codehaus.groovy:groovy-all:$groovyVersion"
 
     ]
 }
