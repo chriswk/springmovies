@@ -1,19 +1,46 @@
 project.ext {
-    hibernateVersion = "4.1.2.FINAL"
-    hibernateValidatorVersion = "4.3.0.Beta1"
-    springVersion = "3.1.1.RELEASE"
-    springSecurityVersion = "3.1.0.RELEASE"
-    logbackVersion = "1.0.1"
-    slf4jVersion = "1.6.4"
-    junitVersion = "4.10"
-    scalateVersion = "1.5.3"
-    groovyVersion = "1.8.6"
-    spockVersion = "0.6-groovy-1.8"
-    wro4jVersion = "1.4.5"
     libraries = [
+            commons: [
+                codec: "commons-codec:commons-codec:$commonsCodecVersion",
+                dbcp: "commons-dbcp:commons-dbcp:$commonsDbcpVersion",
+                io: "commons-io:commons-io:$commonsIoVersion",
+                lang3: "org.apache.commons:commons-lang3:$commonsLang3Version",
+                pool: "commons-pool:commons-pool:$commonsPoolVersion"
+            ],
+            cglib: "cglib:cglib-nodep:$cglibVersion",
+            db: [
+                    h2:"com.h2database:h2:$h2Version",
+                    mysql: "mysql:mysql-connector-java:$mysqlVersion",
+                    hsqldb: "org.hsqldb:hsqldb:$hsqldbVersion"
+            ],
+            google: [
+                    guava: "com.google.guava:guava:$guavaVersion"
+            ],
+            groovy: "org.codehaus.groovy:groovy-all:$groovyVersion",
             hibernate: [
                     core: "org.hibernate:hibernate-core:$hibernateVersion",
+                    entitymanager: "org.hibernate:hibernate-entitymanager:$hibernateVersion",
+                    jpamodelgen: "org.hibernate:hibernate-jpamodelgen:$hibernateJpaModelGenVersion",
+                    persistence: "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:$hibernateJpaApiVersion",
                     validator: "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+            ],
+            javax: [
+                    jta: "javax.transaction:jta:$jtaVersion",
+                    servlet: [
+                            api: "javax.servlet:javax.servlet-api:$servletVersion"
+                    ],
+                    validation: "javax.validation:validation-api:$validationApiVersion"
+            ],
+            logging: [
+                    logback: [
+                            classic:"ch.qos.logback:logback-classic:$logbackVersion"
+                    ],
+                    slf4j: [
+                            api: "org.slf4j:slf4j-api:$slf4jVersion"
+                    ]
+            ],
+            lucene: [
+                    core: "org.apache.lucene:lucene-core:$luceneVersion"
             ],
             scalate: [
                     page: "org.fusesource:scalate-page:$scalateVersion",
@@ -28,25 +55,25 @@ project.ext {
                     oxm: "org.springframework:spring-oxm:$springVersion",
                     orm: "org.springframework:spring-orm:$springVersion",
                     security: [
-                            core: "org.springframework.security:spring-security-core:$springSecurityVersion",
-                            taglibs: "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
+                        config: "org.springframework.security:spring-security-config$springSecurityVersion",
+                        core: "org.springframework.security:spring-security-core:$springSecurityVersion",
+                        taglibs: "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
                     ],
+                    test: "org.springframework:spring-test:$springVersion",
+                    tx: "org.springframework:spring-tx:$springVersion",
                     web: "org.springframework:spring-web:$springVersion",
                     webmvc: "org.springframework:spring-webmvc:$springVersion"
             ],
-            logging: [
-                    slf4japi: "org.slf4j:slf4j-api:$slf4jVersion",
-                    logback: "ch.qos.logback:logback-classic:$logbackVersion"
-            ],
-            junit: "junit:junit:$junitVersion",
-            spock: [
-                core: "org.spockframework:spock-core:$spockVersion"
+            testing: [
+                junit: "junit:junit:$junitVersion",
+                spock: [
+                    core: "org.spockframework:spock-core:$spockVersion"
+                ]
+
             ],
             wro4j: [
                 core: "ro.isdc.wro4j:wro4j-core:$wro4jVersion",
                 extensions: "ro.isdc.wro4j:wro4j-extensions:$wro4jVersion"
-            ],
-            groovy: "org.codehaus.groovy:groovy-all:$groovyVersion"
-
+            ]
     ]
 }

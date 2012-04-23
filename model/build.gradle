@@ -1,5 +1,18 @@
 dependencies {
-    libraries.spring.jdbc
-    libraries.hibernate.core
-    libraries.hibernate.validator
+    compile libraries.spring.jdbc,
+            libraries.spring.orm,
+            libraries.spring.aop,
+            libraries.spring.aspects,
+            libraries.commons.dbcp,
+            libraries.commons.pool,
+            libraries.hibernate.core,
+            libraries.hibernate.entitymanager,
+            libraries.hibernate.persistence,
+            libraries.hibernate.validator,
+            libraries.javax.jta,
+            libraries.javax.validation,
+            libraries.cglib,
+            libraries.db.h2
+    testCompile libraries.spring.test
+
 }

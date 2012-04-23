@@ -6,19 +6,24 @@ subprojects {
 
     apply from : "$rootDir/dependencies.gradle"
 	configurations {
+        js
 		all*.exclude group: "commons-logging", module: "commons-logging"
+        all*.exclude group: "junit", module: "junit-dep", version: 4.9
 	}
 	
 	repositories {
 		mavenCentral()
+        mavenRepo (name: "JQuery", url: "http://code.jquery.com") {
+            pattern: "[module]-[revision](.[classifier]).[ext]"
+        }
 	}
 	
 	dependencies {
         groovy libraries.groovy
-        compile libraries.logging.slf4japi
-        compile libraries.logging.logback
-		testCompile libraries.junit
-        testCompile libraries.spock.core
+        compile libraries.logging.slf4j.api
+        compile libraries.logging.logback.classic
+		testCompile libraries.testing.junit
+        testCompile libraries.testing.spock.core
 	}
 	
 	task listJars << {
