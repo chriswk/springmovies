@@ -1,16 +1,19 @@
-apply plugin: 'groovy'
-apply from : "dependencies.gradle"
+apply plugin: 'idea'
+
+allprojects {
+    apply from : "$rootDir/dependencies.gradle"
+    configurations {
+        js
+        all*.exclude group: "commons-logging", module: "commons-logging"
+        all*.exclude group: "junit", module: "junit-dep", version: 4.9
+    }
+}
+
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'groovy'
 
-    apply from : "$rootDir/dependencies.gradle"
-	configurations {
-        js
-		all*.exclude group: "commons-logging", module: "commons-logging"
-        all*.exclude group: "junit", module: "junit-dep", version: 4.9
-	}
-	
+
 	repositories {
 		mavenCentral()
         mavenRepo (name: "JQuery", url: "http://code.jquery.com") {
@@ -26,12 +29,17 @@ subprojects {
         testCompile libraries.testing.spock.core
 	}
 	
-	task listJars << {
+	task listJars(description: "Lists all dependencies") << {
+        println "------ Compile dependencies -------"
 		configurations.compile.each { File file -> println file.name }
-        configurations.testCompile.each { File file -> println "test $file.name"}
+        println "------ Test dependencies -------"
+        configurations.testCompile.each { File file -> println file.name }
 	}
+    task fetchJs(type: Copy, description: "Copies all js dependencies into $buildDir/js/libs") {
+        from configurations.js
+        into "$buildDir/js/libs"
+    }
 }
-
 task wrapper(type: Wrapper, description: "Builds wrapper for $gradleVersion") {
 
 }

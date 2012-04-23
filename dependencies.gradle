@@ -43,8 +43,10 @@ project.ext {
                     core: "org.apache.lucene:lucene-core:$luceneVersion"
             ],
             scalate: [
-                    page: "org.fusesource:scalate-page:$scalateVersion",
-                    wikitext: "org.fusesource:scalate-wikitext:$scalateVersion"
+                    core: "org.fusesource.scalate:scalate-core:$scalateVersion",
+                    springmvc: "org.fusesource.scalate:scalate-spring-mvc:$scalateVersion",
+                    util: "org.fusesource.scalate:scalate-util:$scalateVersion",
+                    test: "org.fusesource.scalate.scalate-test:$scalateVersion"
             ],
             spring: [
                     aop: "org.springframework:spring-aop:$springVersion",

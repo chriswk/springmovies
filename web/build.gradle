@@ -2,11 +2,14 @@ apply plugin: 'war'
 apply plugin: 'jetty'
 
 dependencies {
+    compile libraries.scalate.core
+    compile libraries.scalate.springmvc
     compile libraries.spring.core
     compile libraries.spring.context
     compile libraries.spring.aspects
     compile libraries.spring.web
     compile libraries.spring.webmvc
     compile libraries.wro4j.core
+    providedCompile libraries.javax.servlet.api
     js group: "jquery", name: "jquery", version:"1.7.2", classifier: "min", ext: "js"
 }
