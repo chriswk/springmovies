@@ -26,7 +26,7 @@ public class WebConfig {
     @Bean
     public ViewResolver scalateViewResolver() {
         ScalateViewResolver viewResolver = new ScalateViewResolver();
-        viewResolver.setPrefix("/WEB-INF/jade");
+        viewResolver.setPrefix("/WEB-INF/views/scalate/");
         viewResolver.setSuffix(".jade");
         viewResolver.setOrder(1);
         return viewResolver;

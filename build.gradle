@@ -17,7 +17,7 @@ subprojects {
 	repositories {
 		mavenCentral()
         mavenRepo (name: "JQuery", url: "http://code.jquery.com") {
-            pattern: "[module]-[revision](.[classifier]).[ext]"
+            pattern: "[name]-[version](.[classifier]).[ext]"
         }
 	}
 	

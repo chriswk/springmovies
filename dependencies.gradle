@@ -27,7 +27,7 @@ project.ext {
             javax: [
                     jta: "javax.transaction:jta:$jtaVersion",
                     servlet: [
-                            api: "javax.servlet:javax.servlet-api:$servletVersion"
+                            api: "javax.servlet:servlet-api:$servletVersion"
                     ],
                     validation: "javax.validation:validation-api:$validationApiVersion"
             ],
