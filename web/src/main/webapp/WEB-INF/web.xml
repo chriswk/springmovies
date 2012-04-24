@@ -1,4 +1,14 @@
 <web-app>
+    <filter>
+        <filter-name>WebResourceOptimizer</filter-name>
+        <filter-class>
+            ro.isdc.wro.http.WroFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>WebResourceOptimizer</filter-name>
+        <url-pattern>/wro/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>movies</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
