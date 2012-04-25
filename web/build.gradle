@@ -1,6 +1,9 @@
 apply plugin: 'war'
 apply plugin: 'jetty'
 
+configurations {
+   jetty8
+}
 dependencies {
     compile libraries.cglib
     compile libraries.scalate.core
@@ -12,4 +15,12 @@ dependencies {
     compile libraries.spring.webmvc
     compile libraries.wro4j.core
     providedCompile libraries.javax.servlet.api
+    jetty8 libraries.jetty.runner
+    jetty8 libraries.eclipse.activation
+}
+
+task runJetty8(type: JavaExec, dependsOn: war) {
+     main = "org.mortbay.jetty.runner.Runner"
+     args = [war.archivePath]
+     classpath configurations.jetty8
 }

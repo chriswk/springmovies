@@ -24,12 +24,18 @@ project.ext {
                     persistence: "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:$hibernateJpaApiVersion",
                     validator: "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
             ],
+            eclipse: [
+                     activation: "org.eclipse.jetty.orbit:javax.activation:$activationVersion"
+            ],
             javax: [
                     jta: "javax.transaction:jta:$jtaVersion",
                     servlet: [
                             api: "javax.servlet:servlet-api:$servletVersion"
                     ],
                     validation: "javax.validation:validation-api:$validationApiVersion"
+            ],
+            jetty: [
+                   runner: "org.mortbay.jetty:jetty-runner:$jettyVersion"
             ],
             logging: [
                     logback: [
